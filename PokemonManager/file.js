@@ -1,2 +1,0 @@
-<% data.forEach((item) => {
-    <% }) %>
