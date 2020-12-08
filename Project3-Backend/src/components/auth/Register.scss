@@ -1,0 +1,18 @@
+.form {
+    margin: auto;
+    border: 1px solid #dadce0;
+    padding: 50px 40px;
+    border-radius: 0.25rem;
+
+    .form-title {
+        text-align: left;
+        color: black;
+        padding-bottom: 40px;
+    }
+
+    ul {
+        list-style-type: none;
+        color: red;
+        font-size: 1rem;
+    }
+}

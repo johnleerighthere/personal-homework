@@ -1,0 +1,39 @@
+.main-home-container {
+  border: 1px solid palegoldenrod;
+}
+
+.map {
+  height: calc(100vh - 50px - 100px);
+  width: 100%;
+  border: 1px solid red;
+  position: relative;
+}
+
+.search-bar {
+  border: 1px solid blue;
+  height: 50px;
+}
+.home-card {
+  border: 1px solid green;
+}
+
+.position {
+  position: absolute;
+  width: 40;
+  height: 40;
+  left: -40 / 2;
+  top: -40 / 2;
+
+  border: 5px solid #f44336;
+  border-radius: 40px;
+  background-color: white;
+  text-align: center;
+  color: #3f51b5;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 4;
+}
+
+.card-component {
+  margin-top: 100px;
+}
