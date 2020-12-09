@@ -1,5 +1,6 @@
 // import Axios from 'axios';
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import {
@@ -12,13 +13,16 @@ import 'toastr/build/toastr.min.css';
 
 
 
+
 class SearchBarComponent extends React.Component {
 
     constructor() {
         super();
         this.state = {
             area: "",
-            latLng: null
+            latLng: null,
+            searchContent: {},
+            searchLocation: false
         }
     }
     inputChange = (event) => {
@@ -36,8 +40,20 @@ class SearchBarComponent extends React.Component {
             return false
         }
 
-        this.props.onNewAddress(this.state.latLng)
-        this.setState({ latLng: "" })
+        // this.props.onNewAddress({latLng:this.state.latLng, locationText: })
+        // this.props.onNewAddress({ type: "Other", latLng: this.state.latLng, locationText: this.state.address })
+        const searchContent = { type: "Other", latLng: this.state.latLng, locationText: this.state.address }
+        this.setState({ searchContent: searchContent })
+        this.setState({ searchLocation: true })
+        this.setState({ latLng: "", address: "" })
+    }
+
+    redirectToHomePage = () => {
+        if (this.state.searchLocation) {
+            console.log("searchContent")
+            console.log(this.state.searchContent)
+            return <Redirect to={`/map/location/${this.state.searchContent}`} />
+        }
     }
 
     handleChange = address => {
@@ -55,7 +71,7 @@ class SearchBarComponent extends React.Component {
     render() {
         return (
             <div>
-
+                {this.redirectToHomePage()}
                 <form className="form-inline">
                     <label id="search-label" style={{ fontWeight: 'bold', color: 'black' }}>Area to check:
                     </label>
