@@ -45,10 +45,11 @@ app.post('/api/v1/users/register', usersController.register)
 app.post('/api/v1/users/login', usersController.login)
 
 // user profile route
-app.get('/api/v1/users/profile', verifyJWT, usersController.getUserProfile)
+app.post('/api/v1/users/profile', usersController.updateUserProfile)
 
 //api route
 app.get('/api/v1/clusters', mainController.getClusters)
+app.get('/api/v1/getclustersfromapi', mainController.getClustersFromApi)
 app.get('/api/v1/storeclusters', mainController.storeClusters)
 
 // seed user route

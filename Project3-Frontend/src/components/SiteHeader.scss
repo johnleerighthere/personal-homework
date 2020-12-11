@@ -1,0 +1,35 @@
+#site-header {
+    .navbar{
+        padding: 20px 0;
+    }
+    .navbar-brand {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        img {
+            max-width: 80px;
+            height: auto;
+            margin-right: 15px;
+        }
+    }
+    .navbar-nav{
+        li {
+            .nav-link {
+                color: black;
+                &:after {
+                    content: "|";
+                    margin-left: 15px;
+                }
+            }
+
+            &:last-of-type {
+                .nav-link {
+                    &:after {
+                        content: "";
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
